@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, Plus, Layout, List } from 'lucide-react';
+import { CheckSquare, Plus, Layout, List } from 'lucide-react';
 import { useTaskContext } from '../context/TaskContext';
 
 const Header = () => {
@@ -19,10 +19,10 @@ const Header = () => {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-3xl font-bold text-gray-900 flex items-center gap-2">
-                <Sparkles className="w-8 h-8 text-blue-600" />
-                AI Task Manager
+                <CheckSquare className="w-8 h-8 text-blue-600" />
+                Task Manager
               </h1>
-              <p className="text-gray-600 text-sm mt-1">Gestisci i tuoi progetti con intelligenza artificiale</p>
+              <p className="text-gray-600 text-sm mt-1">Organizza e gestisci i tuoi progetti</p>
             </div>
             
             <button

@@ -44,6 +44,7 @@ export const TaskProvider = ({ children }) => {
 
   const [view, setView] = useState('kanban');
   const [showAddTask, setShowAddTask] = useState(false);
+  const [editingTask, setEditingTask] = useState(null);
 
   const addTask = (task) => {
     setTasks([...tasks, { ...task, id: Date.now().toString() }]);
@@ -57,20 +58,6 @@ export const TaskProvider = ({ children }) => {
     setTasks(tasks.filter(task => task.id !== id));
   };
 
-  const generateAISuggestions = async (taskDescription) => {
-    // Placeholder per integrazione AI
-    return {
-      subtasks: [
-        'Ricerca e analisi requisiti',
-        'Implementazione base',
-        'Testing e validazione',
-        'Documentazione'
-      ],
-      estimatedHours: Math.floor(Math.random() * 10) + 2,
-      suggestedCategory: 'Development'
-    };
-  };
-
   return (
     <TaskContext.Provider value={{
       tasks,
@@ -81,7 +68,8 @@ export const TaskProvider = ({ children }) => {
       setView,
       showAddTask,
       setShowAddTask,
-      generateAISuggestions
+      editingTask,
+      setEditingTask
     }}>
       {children}
     </TaskContext.Provider>
